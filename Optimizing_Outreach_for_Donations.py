@@ -96,19 +96,12 @@ for i in range(len(y_pred)):
     if value > 0.0:
         j = j+1
         amount = amount + value
-        #new = test[['id', 'market']].set_index('id')
-        #print(new)
-        #new.update(test.set_index('id'))
-        #test.market[iid] = 1
-        #test['market'].iloc[iid] = 1
-        #if test['id'] == iid:
         a = test.id[test.id == iid].index.tolist()
-        print(a[0])
+        #print(a[0])
         test.set_value(a[0], 'market', 1)
-        #print(new)
-        #test['market'].new = 1
+        
 print(j)
 print(sum1)
 print(amount)
 
-#test.to_csv("outpur.csv")
+test.to_csv("output.csv")
